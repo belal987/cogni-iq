@@ -49,8 +49,7 @@ export const useTestStore = create<TestState>((set) => ({
 }));
 
 
-import { create } from "zustand";
-import { AppPage, Question, TestResult, TestState, UserProfile } from "./types";
+import { AppPage, Question as TypeQuestion, TestResult, TestState as TypeTestState, UserProfile } from "./types";
 import { questions as allQuestions } from "./questions";
 
 interface AppState {
@@ -66,7 +65,7 @@ interface AppState {
   logout: () => void;
 
   // Test
-  testState: TestState;
+  testState: TypeTestState;
   startTest: (questionCount?: number) => void;
   answerQuestion: (questionIndex: number, optionIndex: number) => void;
   nextQuestion: () => void;
@@ -87,7 +86,7 @@ interface AppState {
   practiceCurrentIndex: number;
   practiceAnswers: Record<number, number>;
   practiceShowExplanation: boolean;
-  practiceQuestions: Question[];
+  practiceQuestions: TypeQuestion[];
   setPracticeQuestions: () => void;
   answerPractice: (questionIndex: number, optionIndex: number) => void;
   nextPractice: () => void;
@@ -108,7 +107,7 @@ function calculateIQ(correct: number, total: number): number {
 }
 
 function getCategoryScores(
-  questions: Question[],
+  questions: TypeQuestion[],
   answers: Record<number, number>
 ): { pattern: number; logic: number; math: number; verbal: number } {
   const categories = ["pattern", "logic", "math", "verbal"] as const;

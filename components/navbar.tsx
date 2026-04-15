@@ -63,10 +63,8 @@ export function Navbar({ userId }: { userId?: string }) {
                 </Button>
               </Link>
               <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="outline" className="h-10 w-10 rounded-full border-zinc-800 bg-zinc-900 p-0 overflow-hidden ring-offset-zinc-950 focus-visible:ring-emerald-500">
-                    <User className="h-5 w-5 text-emerald-500" />
-                  </Button>
+                <DropdownMenuTrigger className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-800 bg-zinc-900 p-0 overflow-hidden ring-offset-zinc-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">
+                  <User className="h-5 w-5 text-emerald-500" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-56 bg-zinc-900 border-zinc-800 text-zinc-100 p-2">
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>
